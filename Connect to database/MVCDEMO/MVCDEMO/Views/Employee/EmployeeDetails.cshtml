@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<h1>EmployeeDetails</h1>
+@using (Html.BeginForm()) 
+{
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Emp Name</th>
+                <td>
+                    @Html.TextBox("EmpName")  
+                </td>
+            </tr>
+            <tr>
+                <th>Emp Id</th>
+                <td>
+                    @Html.TextBox("EmpId")
+                </td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td>
+                    @Html.TextBox("phone")
+                </td>
+            </tr>
+            <tr>
+                <th>Emp Salary</th>
+                <td>
+                    @Html.TextBox("salary")
+                </td>
+            </tr>
+            <tr>
+                <th>Select Gender</th>
+                <td>
+                    @Html.RadioButton("Gender","Male") Male
+                    @Html.RadioButton("Gender","Female") Female
+                </td>
+            </tr>
+            <tr>
+                <th>Select Location</th>
+                <td>
+                    <input type="checkbox" value="Mumbai" name="Location" /> Mumbai
+                    <input type="checkbox" value="Pune" name="Location" /> Pune
+                    <input type="checkbox" value="Bangalore" name="Location" /> Bangalore
+                    <input type="checkbox" value="Hydrabad" name="Location" /> Hydrabad
+                </td>
+            </tr>
+            <tr>
+                <th>Select Your Designation</th>
+                <td>
+                    @Html.DropDownList("Options");
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    
+}
+
+
