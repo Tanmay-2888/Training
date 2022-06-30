@@ -16,15 +16,15 @@ namespace WebAPIDemo1.Services
         {
             return _iCourseRepo.AddCourse(Cour);
         }
-        public int DeleteProduct(int id)
+        public int DeleteCourse(int id)
         {
             return _iCourseRepo.DeleteCourse(id);
         }
-        public IEnumerable<Course> GetAllProducts()
+        public IEnumerable<Course> GetAllCourse()
         {
-            return _iCourseRepo.GetAllProducts();
+            return _iCourseRepo.GetAllCourse();
         }
-        public int ModifyProduct(Course Cour)
+        public int ModifyCourse(Course Cour)
         {
             return _iCourseRepo.ModifyCourse(Cour);
         }

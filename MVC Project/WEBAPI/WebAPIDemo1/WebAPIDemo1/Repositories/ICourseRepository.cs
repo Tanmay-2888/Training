@@ -5,9 +5,9 @@ namespace WebAPIDemo1.Repositories
 {
     public interface ICourseRepository
     {
-        IEnumerable<Course> GetAllProducts();
+        IEnumerable<Course> GetAllCourse();
         int AddCourse(Course Cour);
-        int ModifyProduct(Course Cour);
-        int DeleteProduct(int id);
+        int ModifyCourse(Course Cour);
+        int DeleteCourse(int id);
     }
 }

@@ -5,7 +5,7 @@ namespace WebAPIDemo1.Services
 {
     public interface ICourseService
     {
-        IEnumerable<Course> GetAllProducts();
+        IEnumerable<Course> GetAllCourse();
         int AddCourse(Course Cour);
         int ModifyCourse(Course Cour);
         int DeleteCourse(int id);

@@ -2,6 +2,7 @@
 using WebAPIDemo1.Entities;
 using WebAPIDemo1.Model;
 using System;
+using System.Linq;
 
 namespace WebAPIDemo1.Repositories
 {
@@ -27,7 +28,7 @@ namespace WebAPIDemo1.Repositories
                 var Cour = context.Courses.Where(c => c.Id == id).SingleOrDefault();
                 if (Cour != null)
                 {
-                    context.Course.Remove(Cour);
+                    context.Courses.Remove(Cour);
                     context.SaveChanges();
                     return 1;
                 }
@@ -37,17 +38,17 @@ namespace WebAPIDemo1.Repositories
                 }
             }
 
-            public IEnumerable<Course> GetAllProducts()
+            public IEnumerable<Course> GetAllCourse()
             {
-                return context.Course.ToList();
+                return context.Courses.ToList();
             }
 
-            public int ModifyProduct(Course Cour)
+            public int ModifyCourse(Course Cour)
             {
-                var Course = context.Course.Where(p => p.Id == Cour.Id).SingleOrDefault();
+                var Course = context.Courses.Where(p => p.Id == Cour.Id).SingleOrDefault();
                 if (Course != null)
                 {
-                    Course.Name = Cour.Name;
+                    Course.CourseName = Cour.CourseName;
                     Course.Fee = Cour.Fee;
                     context.SaveChanges();
                     return 1;

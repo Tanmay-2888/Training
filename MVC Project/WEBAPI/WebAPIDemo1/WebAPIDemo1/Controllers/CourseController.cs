@@ -7,23 +7,21 @@ namespace WebAPIDemo1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CourseController : ControllerBase
-    {
-        [Route("api/[controller]")]
-        [ApiController]
-        public class ProductController : ControllerBase
+    
+    
+        public class CoursesController : ControllerBase
         {
             private readonly ICourseService _courservice;
-            public CourseController(ICourseService Courservice)
+            public CoursesController(ICourseService Courservice)
             {
                 _courservice = Courservice;
             }
             [HttpGet]
-            [Route("[action]")]
+            //[Route("[action]")]
             [Route("GetCourse")]
             public IActionResult GetCourse()
             {
-                return new ObjectResult(_courservice.GetAllProducts());
+                return new ObjectResult(_courservice.GetAllCourse());
                 // test code
             }
             [HttpPost]
@@ -49,4 +47,4 @@ namespace WebAPIDemo1.Controllers
         }
 
     }
-}
+
