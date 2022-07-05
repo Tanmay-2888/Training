@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var ullist = $("#prodlist");
+
+            $("#btn").click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:9388/api/Product/GetProducts',
+                    dataType: 'json',
+                    success: function (data) {
+                        $.each(data, function (i, item) {
+                            ullist.append("<li>" + item.name +"  "+item.price+"</li>");
+                        });
+                     }
+
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="Get All Product" />
+    <input type="button" id="btnClear" value="Clear" />
+    <ul id="prodlist"></ul>
+</body>
+</html>

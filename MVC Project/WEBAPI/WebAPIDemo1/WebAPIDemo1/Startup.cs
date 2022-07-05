@@ -30,6 +30,9 @@ namespace WebAPIDemo1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddDefaultPolicy(builder => builder.WithOrigins("http://localhost:21178").AllowAnyHeader().AllowAnyMethod()
+            ));
+
 
             services.AddControllers();
             // Configuration with DB
@@ -55,6 +58,7 @@ namespace WebAPIDemo1
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
+                app.UseCors();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SampleWebApi v1"));
             }
 
