@@ -24,7 +24,7 @@ namespace AuthenticationDemo.Controllers
             return View(product);
         }
 
-        // GET: ProductWithModelController/Create
+        // GET: ProductWithModelController/create
         public ActionResult Create()
         {
             return View();
